@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# Calculator — Proyecto de práctica con Redux Toolkit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot del proyecto](./public/screenshot.svg)
 
-Currently, two official plugins are available:
+Descripción
+---------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este es un proyecto pequeño creado para practicar el uso de Redux Toolkit con React y TypeScript. Implementa un contador simple con acciones para incrementar, decrementar y aumentar el contador por una cantidad dada.
 
-## React Compiler
+Tecnologías y frameworks
+------------------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<p align="left">
+	<a href="https://skillicons.dev">
+		<img src="https://skillicons.dev/icons?i=git,html,css,react,ts,redux,vite,tailwind" />
+	</a>
+</p>
 
-## Expanding the ESLint configuration
+- **React** — Biblioteca para construir la interfaz de usuario.
+- **Vite** — Herramienta de construcción y servidor de desarrollo rápido.
+- **TypeScript** — Tipado estático para mayor seguridad y autocompletado.
+- **Redux Toolkit** — Simplifica la configuración de Redux (slices, store, etc.).
+- **React Redux** — Conecta React con Redux.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Estructura principal
+--------------------
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `src/features/counter/` — Slice(s) del contador (`counterSlice.ts`, `counterSlices.ts`).
+- `src/Redux/store.ts` — Configuración del store de Redux y tipos `RootState`/`AppDispatch`.
+- `src/App.tsx` — Componente principal que usa `useSelector` y `useDispatch`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Qué incluye este proyecto
+-------------------------
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Slice del contador con acciones: `incrementar`, `decrementar`, `incrementarPorMonto`.
+- Tipado del store: `RootState` y `AppDispatch` para usar con `useSelector` y `useDispatch`.
+- Ejemplo de componente que despacha acciones y muestra el valor actual.
+
+Cómo ejecutar
+-------------
+
+Instala dependencias y arranca el servidor de desarrollo:
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Notas sobre la imagen
+---------------------
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+He incluido un `public/screenshot.svg` con una captura de ejemplo (mock) del contador en ejecución. Puedes reemplazarlo por una captura real PNG/SVG exportada desde tu navegador si prefieres una imagen real del proyecto compilado.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Propósito
+---------
+
+Este repositorio sirve como espacio de práctica para entender y dominar conceptos de Redux Toolkit integrados con React y TypeScript: creación de slices, exportación de acciones y reducers, integración en el store, y tipado seguro del estado global.
+
+Si quieres, puedo:
+
+- Añadir instrucciones para pruebas unitarias o e2e.
+- Generar una captura real automáticamente (requiere ejecutar la app y tomar screenshot).
+- Añadir un archivo `CONTRIBUTING.md` o plantillas de commit.
+
+— Fin —
