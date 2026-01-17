@@ -46,11 +46,6 @@ npm install
 npm run dev
 ```
 
-Notas sobre la imagen
----------------------
-
-He incluido un `public/screenshot.svg` con una captura de ejemplo (mock) del contador en ejecución. Puedes reemplazarlo por una captura real PNG/SVG exportada desde tu navegador si prefieres una imagen real del proyecto compilado.
-
 Propósito
 ---------
 
