@@ -16,11 +16,8 @@ export const counterSlice = createSlice({
         incrementarPorMonto: (state, action) => {
             // Usamos action.payload para recibir un valor externo
             state.value += action.payload;
-        },
-        imprimir_valor(state) {
-            console.log("Valor actual del contador:", state.value);
         }
-    },
+    }
 });
 
 // Exportamos las acciones para usarlas en los componentes

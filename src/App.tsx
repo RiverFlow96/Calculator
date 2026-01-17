@@ -1,11 +1,15 @@
 import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { incrementar, decrementar, incrementarPorMontos} from './features/counter/counterSlice'
+import { incrementar, decrementar, incrementarPorMonto } from './features/counter/counterSlice'
+import type { RootState, AppDispatch } from './Redux/store'
 
 function App() {
 
-  const count = useSelector((state: any) => state.counter.value)
-  const dispatch = useDispatch()
+
+  // Usamos `RootState` (definido en `src/Redux/store.ts`) para tipar el estado
+  // y así obtener autocompletado y seguridad de tipos en `useSelector`.
+  const count = useSelector((state: RootState) => state.counter.value)
+  const dispatch = useDispatch<AppDispatch>()
 
   return (
     <div className='bg-white shadow-2xl w-[40dvw] h-[60dvh] flex flex-col justify-center items-center gap-4 rounded-2xl font-sans'>
